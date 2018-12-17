@@ -1,0 +1,40 @@
+
+import urllib.request
+from bs4 import BeautifulSoup
+
+
+
+
+def main():
+    list_pagination = []
+    
+    for i in range(0,5):
+        temp =""
+        if(i>0):
+            temp=str(i*20)
+        url = "http://sports.donga.com/Enter?p="+temp+"1&c=02"
+        req = urllib.request
+        sourcecode = req.urlopen(url).read()
+        soup = BeautifulSoup(sourcecode, "html.parser")
+        spans = soup.find_all("span",class_="tit")
+       
+        for j in range(0,len(spans)-4):
+            list_pagination.append(spans[j+3].get_text())
+            
+    print(list_pagination)
+
+'''
+    for i in range(0, 5):
+        url = -
+        req = urllib.request.Request(url)
+        sourcecode = urllib.request.urlopen(url).read()
+        soup = BeautifulSoup(sourcecode, "html.parser")
+
+        for i in -:
+            list_pagination.append(-)
+
+    print(list_pagination)
+'''
+
+if __name__ == "__main__":
+    main()

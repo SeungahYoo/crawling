@@ -1,0 +1,15 @@
+
+
+def main():
+    text_one = "나는 짜장면을 짜장면을 좋아합니다."
+
+    print(text_one.split())#split()
+    print(text_one.split(' ')) #split(' ')
+    print(text_one.replace("짜장면", "짬뽕")) #replaceAll
+    print(text_one[0])
+    print(text_one[7:])
+    print(text_one[-4:])
+    print(text_one[3:10:2])
+
+if __name__ == "__main__":
+    main()
